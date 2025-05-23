@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router";
-import { AnimatePresence } from "framer-motion";
 import ReactMarkdown from "react-markdown";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const markdown = `
   # Blog Title
@@ -25,35 +26,117 @@ function Blog() {
 }
 
 function Home() {
-  return <div className="text-red-300">Home Page</div>;
+  return (
+    <div className="flex pt-8">
+      <div className="flex-none w-1/5"></div>
+      <div className="w-max">
+        <h1 className="font-sans tracking-wide text-2xl/8">
+          Petros Chantzopoulos
+        </h1>
+        <h3 className="pt-2 font-serif italic tracking-wide text-xl/8">
+          - strategic digital product designer
+        </h3>
+        <br></br>
+        <br></br>
+        <p className="tracking-wide text-lg/8">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil hic
+          corporis quos at, molestias pariatur vero non qui suscipit minima
+          provident nesciunt dignissimos libero odio porro. Voluptas laboriosam
+          placeat odio! Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Nihil hic corporis quos at, molestias pariatur vero non qui
+          suscipit minima provident nesciunt dignissimos libero odio porro.
+          Voluptas laboriosam placeat odio!
+        </p>
+        <br></br>
+        <p className="tracking-wide text-lg/8">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil hic
+          corporis quos at, molestias pariatur vero non qui suscipit minima
+          provident nesciunt dignissimos libero odio porro. Voluptas laboriosam
+          placeat odio! Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Nihil hic corporis quos at, molestias pariatur vero non qui
+          suscipit minima provident nesciunt dignissimos libero odio porro.
+          Voluptas laboriosam placeat odio!
+        </p>
+        <br></br>
+        <p className="tracking-wide text-lg/8">
+          Due to NDA restrictions, I’m unable to showcase my professional work
+          in the public domain. -{" "}
+          <span>
+            <a href="mailto:petros.chantz@gmail.com" className="underline ">
+              request portfolio
+            </a>
+          </span>
+        </p>
+      </div>
+      <div className="flex-none w-1/5"></div>
+    </div>
+  );
 }
 
-function About() {
-  return <div>About Page</div>;
+function DesignProcess() {
+  return (
+    <div className="flex pt-8">
+      <div className="flex-none w-1/5"></div>
+      <div className="w-max">
+        <div className=" w-max h-[600px]"></div>
+        <h1 className="font-sans tracking-wide text-2xl/8">
+          Petros Chantzopoulos
+        </h1>
+
+        <br></br>
+        <br></br>
+        <p className="tracking-wide text-lg/8">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil hic
+          corporis quos at, molestias pariatur vero non qui suscipit minima
+          provident nesciunt dignissimos libero odio porro. Voluptas laboriosam
+          placeat odio! Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Nihil hic corporis quos at, molestias pariatur vero non qui
+          suscipit minima provident nesciunt dignissimos libero odio porro.
+          Voluptas laboriosam placeat odio!
+        </p>
+        <br></br>
+        <p className="tracking-wide text-lg/8">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil hic
+          corporis quos at, molestias pariatur vero non qui suscipit minima
+          provident nesciunt dignissimos libero odio porro. Voluptas laboriosam
+          placeat odio! Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Nihil hic corporis quos at, molestias pariatur vero non qui
+          suscipit minima provident nesciunt dignissimos libero odio porro.
+          Voluptas laboriosam placeat odio!
+        </p>
+        <br></br>
+        <p className="tracking-wide text-lg/8">
+          Due to NDA restrictions, I’m unable to showcase my professional work
+          in the public domain. -{" "}
+          <span>
+            <a href="mailto:petros.chantz@gmail.com" className="underline ">
+              request portfolio
+            </a>
+          </span>
+        </p>
+      </div>
+      <div className="flex-none w-1/5"></div>
+    </div>
+  );
 }
 
-function AnimatedRoutes() {
+function PageRoutes() {
   const location = useLocation();
   return (
-    <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-      </Routes>
-    </AnimatePresence>
+    <Routes location={location} key={location.pathname}>
+      <Route path="/" element={<Home />} />
+      <Route path="/design-process" element={<DesignProcess />} />
+      <Route path="/blog" element={<Blog />} />
+    </Routes>
   );
 }
 
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
-      <AnimatedRoutes />
+      <Navbar />
+      <PageRoutes />
+      <Footer />
     </Router>
   );
 }
