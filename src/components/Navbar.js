@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const location = useLocation();
@@ -10,22 +10,24 @@ function Navbar() {
         currentPath !== "/" ? "justify-between" : "justify-end"
       }`}
     >
-      {currentPath !== "/" && <p className="text-lg">Petros Chantzopoulos</p>}
+      {currentPath !== "/" && (
+        <Link key="/" to="/" className="text-lg">
+          Petros Chantzopoulos
+        </Link>
+      )}
 
       <div className="flex gap-4">
         <a
-          href="email"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-7 px-5 rounded-[40px] hover:bg-[#e5e7eb] bg-[#F5F5F5] focus:outline-offset-4 focus:outline-[#f5f5f5] font-medium text-sm flex gap-1 items-center justify-center"
+          href="mailto:petros.chantz@gmail.com?subject=Request%20for%20portfolio%20&body=Hey%20Petros%21%20I%20checked%20your%20website%20and%20I'm%20interested%20in%20viewing%20your%20portfolio."
+          className="btn-links"
         >
           email
         </a>
         <a
-          href="https://example.com"
+          href="https://www.linkedin.com/in/petroschantz/"
           target="_blank"
           rel="noopener noreferrer"
-          className="h-7 px-5 rounded-[40px] hover:bg-[#e5e7eb] bg-[#F5F5F5] focus:outline-offset-4 focus:outline-[#f5f5f5] font-medium text-sm flex gap-1 items-center justify-center"
+          className="btn-links"
         >
           linkedIn
           <svg
