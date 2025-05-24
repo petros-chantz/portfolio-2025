@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => (
-  <div className="border-b border-gray-200">
+  <div className="">
     <button
       onClick={onClick}
-      className="flex items-center justify-between w-full px-6 py-4 font-medium text-left text-gray-800 transition hover:bg-gray-100"
+      className="flex items-center justify-between w-full py-4 font-medium tracking-wide text-left text-gray-800 transition text-xl/8 "
     >
       {title}
-      <span className="text-lg">{isOpen ? "-" : "+"}</span>
+      <span className="text-2xl/8">{isOpen ? "-" : "+"}</span>
     </button>
-    {isOpen && <div className="px-6 pb-4 text-gray-600">{content}</div>}
+    {isOpen && <div className="tracking-wide text-lg/8">{content}</div>}
   </div>
 );
 
@@ -22,22 +22,24 @@ export default function Accordion() {
 
   const items = [
     {
-      title: "What is React?",
-      content: "React is a JavaScript library for building user interfaces.",
-    },
-    {
-      title: "What is Tailwind?",
+      title: "How do you justify tough design decisions?",
       content:
-        "Tailwind CSS is a utility-first CSS framework for rapid UI development.",
+        "Tough design decisions are always backed by a combination of user research, business goals, and product constraints. I rely on usability testing, data insights, and clear communication to present the rationale behind my choices. It’s important to demonstrate how each decision aligns with both user needs and long-term vision.\n\nWhen pushback occurs, I invite stakeholders into the decision-making process by framing trade-offs clearly. Instead of defending a design emotionally, I show the risks of alternatives and propose experiments or prototypes to test assumptions quickly.",
     },
     {
-      title: "Is this an accordion?",
-      content: "Yes, it is a simple accessible accordion built with React.",
+      title: "How do you manage stakeholders?",
+      content:
+        "Managing stakeholders effectively begins with setting expectations early and maintaining open channels of communication. I focus on understanding each stakeholder’s goals and concerns, then tailor how I present updates, roadmaps, or design rationale accordingly. Regular check-ins and visual documentation help keep everyone aligned.\n\nI also try to create an environment of collaboration rather than just sign-off. That means listening actively, incorporating feedback meaningfully, and showing how the design process supports business outcomes. When handled well, stakeholders become champions, not roadblocks.",
+    },
+    {
+      title: "What do you mean by strategic digital product design?",
+      content:
+        "Strategic digital product design means thinking beyond the interface. It involves understanding the market, user behavior, and business goals to create solutions that are not just beautiful but impactful. It’s a balance of usability, feasibility, and viability — all grounded in real-world context.\n\nIn practice, this could mean identifying underserved user segments, uncovering inefficiencies in a customer journey, or finding design leverage points that increase retention. Strategic design transforms design from a service to a driver of growth and innovation.",
     },
   ];
 
   return (
-    <div className="max-w-md mx-auto mt-10 overflow-hidden bg-white shadow rounded-xl">
+    <div className="flex flex-col gap-8">
       {items.map((item, index) => (
         <AccordionItem
           key={index}
