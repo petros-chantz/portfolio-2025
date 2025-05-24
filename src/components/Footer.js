@@ -5,8 +5,8 @@ export default function Footer() {
   const currentPath = location.pathname;
 
   return (
-    <div className="absolute flex items-center justify-center transform -translate-x-1/2 bottom-8 left-1/2">
-      <div className="flex items-center h-10 gap-4 bg-[#F6F6F6] p-5 rounded-[40px] transition delay-150 duration-400 ease-linear hover:-translate-y-1 hover:-translate-x-1 hover:scale-105">
+    <div className="fixed bottom-0 z-50 flex items-center justify-center w-full p-8 transform -translate-x-1/2 left-1/2 backdrop-blur-sm bg-white/30">
+      <div className="btn-nav">
         {[
           ["about", "/"],
           ["design process", "/design-process"],
@@ -16,7 +16,7 @@ export default function Footer() {
             key={url}
             to={url}
             className={`flex items-center justify-center gap-4 text-lg hover:opacity-100 transition ${
-              currentPath === url ? "opacity-100 font-medium" : "opacity-50"
+              currentPath === url ? "opacity-100 font-medium" : "opacity-60"
             }`}
           >
             {title}

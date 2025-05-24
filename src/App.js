@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import DesignProcess from "./pages/DesignProcess";
 import Vision from "./pages/Vision";
+import ScrollToTop from "./ScrolllToTop";
 
 function PageRoutes() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function PageRoutes() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <PageRoutes />
       <Footer />
