@@ -1,8 +1,8 @@
 export default function About() {
   return (
-    <div className="flex pt-8">
-      <div className="flex-none w-1/5"></div>
-      <div className="w-max">
+    <div className="flex pt-8 pb-48 md:pb-0">
+      <div className="container"></div>
+      <div className=" w-max">
         <h1 className="font-sans tracking-wide text-2xl/8">
           Petros Chantzopoulos
         </h1>
@@ -41,7 +41,7 @@ export default function About() {
           </span>
         </p>
       </div>
-      <div className="flex-none w-1/5"></div>
+      <div className="container"></div>
     </div>
   );
 }

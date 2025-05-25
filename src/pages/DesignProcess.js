@@ -5,7 +5,7 @@ export default function DesignProcess() {
     <div>
       <div className="w-full h-[600px]"></div>
       <div className="flex pt-8 pb-52">
-        <div className="flex-none w-1/5"></div>
+        <div className="container"></div>
         <div className=" w-max">
           <h3 className="font-sans tracking-wide text-2xl/8">
             "Show me, don't tell me."
@@ -57,7 +57,7 @@ export default function DesignProcess() {
           <br></br>
           <Accordion />
         </div>
-        <div className="flex-none w-1/5"></div>
+        <div className="container"></div>
       </div>
     </div>
   );

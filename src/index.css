@@ -9,3 +9,7 @@
 .btn-nav {
   @apply flex items-center h-10 gap-4 p-5 transition duration-500 ease-linear delay-150 rounded-full bg-light hover:scale-105;
 }
+
+.container {
+  @apply flex-none w-1/12 lg:w-1/5;
+}

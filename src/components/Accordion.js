@@ -1,15 +1,26 @@
 import { useState } from "react";
 
 const AccordionItem = ({ title, content, isOpen, onClick }) => (
-  <div className="">
+  <div>
     <button
       onClick={onClick}
-      className="flex items-center justify-between w-full py-4 font-medium tracking-wide text-left text-gray-800 transition text-xl/8 "
+      className="flex items-center justify-between w-full gap-4 py-4 font-medium tracking-wide text-left text-gray-800 transition text-xl/8"
     >
       {title}
       <span className="text-2xl/8">{isOpen ? "-" : "+"}</span>
     </button>
-    {isOpen && <div className="tracking-wide text-lg/8">{content}</div>}
+
+    <div
+      className={`transition-opacity duration-300 ease-in-out ${
+        isOpen
+          ? "opacity-100 max-h-screen"
+          : "opacity-0 max-h-0 overflow-hidden"
+      }`}
+    >
+      <p className="mt-2 tracking-wide whitespace-pre-line text-lg/8">
+        {content}
+      </p>
+    </div>
   </div>
 );
 
