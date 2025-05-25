@@ -28,6 +28,35 @@ export default function DesignProcess() {
               </div>
             ))}
           </div>
+          <h1 className="font-semibold tracking-widest underline text-purple decoration-2 font-rock underline-offset-4">
+            Leading Strategy Workshops
+          </h1>
+          <p className="pt-2 tracking-wide text-lg/8 text-purple">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil hic
+            corporis quos at, molestias pariatur vero non qui suscipit minima
+            provident nesciunt dignissimos libero odio porro. Voluptas
+            laboriosam placeat odio! Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Nihil hic corporis quos at, molestias pariatur
+            vero non qui suscipit minima provident nesciunt dignissimos libero
+            odio porro. Voluptas laboriosam placeat odio!
+          </p>
+          <br></br>
+          <h1 className="font-semibold tracking-widest underline text-green decoration-2 font-rock underline-offset-4">
+            Iterative Prototyping
+          </h1>
+          <br></br>
+          <h1 className="font-semibold tracking-widest underline text-blue decoration-2 font-rock underline-offset-4">
+            Showcases
+          </h1>
+          <br></br>
+          <h1 className="font-semibold tracking-widest underline text-orange decoration-2 font-rock underline-offset-4">
+            Department Presentations
+          </h1>
+          <br></br>
+          <h1 className="font-semibold tracking-widest underline text-yellow decoration-2 font-rock underline-offset-4">
+            Experience & Customer Flows
+          </h1>
+
           <br></br>
           <br></br>
           <br></br>
