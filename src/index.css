@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Font imports */
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 
+/* Component utilities */
 .btn-links {
   @apply flex items-center justify-center gap-2 px-5 text-sm font-medium transition-colors duration-200 rounded-full h-7 bg-light hover:bg-lightHover;
 }

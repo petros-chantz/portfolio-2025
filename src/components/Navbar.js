@@ -1,17 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 
-function Navbar() {
-  const location = useLocation();
-  const currentPath = location.pathname;
+export default function Navbar() {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
 
   return (
     <div
-      className={`flex items-center h-16 gap-4 px-5 ${
-        currentPath !== "/" ? "justify-between" : "justify-end"
+      className={`flex items-center h-16 px-5 gap-4 ${
+        isHome ? "justify-end" : "justify-between"
       }`}
     >
-      {currentPath !== "/" && (
-        <Link key="/" to="/" className="text-lg">
+      {!isHome && (
+        <Link to="/" className="text-lg">
           Petros Chantzopoulos
         </Link>
       )}
@@ -23,18 +23,19 @@ function Navbar() {
         >
           email
         </a>
+
         <a
           href="https://www.linkedin.com/in/petroschantz/"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-links"
+          className="flex items-center gap-1 btn-links"
         >
           linkedIn
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            className="size-4"
+            className="w-4 h-4"
           >
             <path
               fillRule="evenodd"
@@ -47,5 +48,3 @@ function Navbar() {
     </div>
   );
 }
-
-export default Navbar;

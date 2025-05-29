@@ -1,5 +1,10 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useLocation } from "react-router";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import About from "./pages/About";
@@ -9,6 +14,7 @@ import ScrollToTop from "./ScrolllToTop";
 
 function PageRoutes() {
   const location = useLocation();
+
   return (
     <Routes location={location} key={location.pathname}>
       <Route path="/" element={<About />} />
